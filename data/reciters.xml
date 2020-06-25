@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<reciters >
+    <reciter index="0" aname="عبد الباسط عبد الصمد" ename="Abdelbased Abdelsamad" audiopath="000"/>
+    <reciter index="1" aname="عبدالله بصفر" ename="Abdullah Basfar" audiopath="001"/>
+   <reciter index="2" aname="محمود خليل الحصري" ename="Mahmoud Khalil Al Hussary" audiopath="002"/>
+   <reciter index="3" aname="الحصري - المعلم" ename="Al Hussary-Muallem" audiopath="003"/>
+
+</reciters >

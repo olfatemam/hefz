@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page index="2" ttl="5" left="61.795" top="68.598" right="533.48" bottom="785.195">
+    <sborders>
+        <sborder index="2" left="102.236" top="-42.52" right="493.417" bottom="252.224"/>
+    </sborders>
+    <verses>
+        <verse sura="2" aya="1" cx="367.349" cy="405.915" r="9.921"/>
+        <verse sura="2" aya="2" cx="369.139" cy="442.237" r="9.921"/>
+        <verse sura="2" aya="3" cx="300.742" cy="477.05" r="9.921"/>
+        <verse sura="2" aya="4" cx="179.156" cy="510.59" r="9.921"/>
+        <verse sura="2" aya="5" cx="248.431" cy="579.936" r="9.921"/>
+    </verses>
+</page>

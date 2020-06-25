@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tafseers>
+    <tafseer index="0" aname="Saheeh International" ename="" language="en" filepath="en.sahih.xml"/>
+    <tafseer index="1" aname="تفسير الجلالين" ename="Jalal ad-Din al-Mahalli and Jalal ad-Din as-Suyuti" language="ar" filepath="ar.jalalayn.xml"/>
+    <tafseer index="2" aname="تفسير المیسر" ename="King Fahad Quran Complex" language="ar" filepath="ar.muyassar.xml"/>
+</tafseers>
