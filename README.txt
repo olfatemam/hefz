@@ -18,9 +18,12 @@ for one reciter to test the functionality, the complete audio files can be aquir
 TODO:
 
 
-
-1. change the design for the ihfaz.php: any help in this area is appreciated.
-2. chNGE VOLUME CONTROL to be vertical so the play, stop can be larger in size
+- implement configuration class
+- implement proper registration to viewers count 
+- use w3css styles
+-review code
+- change the design for the ihfaz.php: any help in this area is appreciated.
+- chNGE VOLUME CONTROL to be vertical so the play, stop can be larger in size
 
 description of the classes:
 
