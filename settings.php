@@ -12,8 +12,8 @@
         <title></title>
 ﻿<?php
 
-require_once 'classes/quran_info_generator.php';
-require_once 'classes/png_generator.php';
+require_once 'Backend/TheBookPagesGenerator.php';
+require_once 'Backend/PagesPngGenerator.php';
 
 ?>
     </head>
@@ -22,37 +22,32 @@ require_once 'classes/png_generator.php';
             <input type="submit" name="Action"  value="GenerateIndexes" >
             <input type="submit" name="Action"  value="GeneratePngPages" >
             <input type="submit" name="Action"  value="clear_cache" >
-                <?php
-        
+<?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        $data_path= 'data/';
         switch ($_POST['Action'])
         {
             case 'GenerateIndexes':
                 ini_set('max_execution_time', 600); 
-                $obj = new quran_info_generator($data_path);
+                $obj = new TheBookPagesGenerator();
                 $obj->setup_indexes();
                 echo 'done!';
             break;
 
             case 'GeneratePngPages':
                 ini_set('max_execution_time', 600); 
-                $obj = new png_generator($data_path);
+                $obj = new PagesPngGenerator();
                 $obj->export_svg_to_png();
                 echo 'done!';
             break;
         
         case 'clear_cache':
-            apcu_clear_cache();
+            //apcu_clear_cache();
             break;
         }
-    }
-    else 
-    {
     }
 ?>
  
 </form>
-    </body>
+</body>
 </html>

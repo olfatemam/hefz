@@ -7,10 +7,10 @@
  * https://www.upwork.com/freelancers/~011afaac378ad2d181
  */
 
-require_once 'classes/mp_generator.php';
+require_once 'Controllers/MainPageController.php';
 ini_set("display_errors",true);
-$some_var = new mp_generator();        
-echo $some_var->generate(TOP_BANNER);
+$main_page = new MainPageController();        
+echo $main_page->generate(TOP_BANNER);
 ?>
 
 <script>

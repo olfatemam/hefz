@@ -8,11 +8,6 @@
 function __autoload($class_name) {
   require_once 'classes/versesaudio.php';
 }
-    $reciter = "000";
-    $soura = 2;
-    $from = 1;
-    $to = 3;
-    $repeat =1;
 
 if( isset($_GET['reciter']) )
 {
@@ -28,7 +23,7 @@ if( isset($_GET['reciter']) )
 }
 else
 {
-    $hefzverses = new VersesAudio($reciter, $soura, $from, $to, $repeat);
+    $hefzverses = new VersesAudio();
     $hefzverses->send_file();
 }
  ?>
