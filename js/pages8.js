@@ -444,6 +444,14 @@ function read_int(value)
         ival = parseInt(value, 10);
     return ival;
 }
+function hide_dropdowns()
+{
+    divsToHide = document.getElementsByClassName ('w3-dropdown-content');
+    for(var i = 0; i < divsToHide.length; i++)
+    {
+        divsToHide[i].style.display = "none"; // depending on what you're doing
+    }
+}
 
 QPages.prototype.set_active_page=function(sura, aya)
 {    

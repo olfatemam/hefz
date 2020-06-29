@@ -23,7 +23,7 @@ class Header extends HtmlGenerator
         $header .= '<script src="js/ihfaz7.js"></script>';
         $header .= '<script src="js/verserect12.js"></script>';
         $header .= '<script src="js/verse8.js"></script>';
-        $header .= '<script src="js/pages7.js"></script>';
+        $header .= '<script src="js/pages8.js"></script>';
         $header .= '<script src="js/media8.js"></script>';
         $header .= '<script src="js/process8.js"></script>';
 

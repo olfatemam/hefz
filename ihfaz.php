@@ -42,7 +42,7 @@ require_once 'classes/reciter_info.php';
     <td><label for="soura">soura:</label></td>
     <td>
         <?php
-            $souras_obj = new suras();
+            $souras_obj = new Suras();
             echo $souras_obj->create_chapters_combo();
         ?>
     </td>

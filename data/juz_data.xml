@@ -1,35 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
--->
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <quran>
-    <juz index="1" name="الفاتحة" tname="Al-Faatiha" sura="1" aya="1" />
-    <juz index="2" name="البقرة" tname="Al-Baqara" sura="2" aya="142" />
-    <juz index="3" name="البقرة" tname="Al-Baqara" sura="2" aya="253" />
-    <juz index="4" name="آل عمران" tname="Aal-i-Imraan" sura="3" aya="93" />
-    <juz index="5" name="النساء" tname="An-Nisaa" sura="4" aya="24" />
-    <juz index="6" name="النساء" tname="An-Nisaa"  sura="4" aya="148" />
-    <juz index="7" name="المائدة" tname="Al-Maaida" sura="5" aya="82" />
-    <juz index="8" name="الأنعام" tname="Al-An'aam" sura="6" aya="111" />
-    <juz index="9" name="الأعراف" tname="Al-A'raaf" sura="7" aya="88" />
-    <juz index="10" name="الأنفال" tname="Al-Anfaal" sura="8" aya="41" />
-    <juz index="11" name="التوبة" tname="At-Tawba" sura="9" aya="93" />
-    <juz index="12" name="هود" tname="Hud" sura="11" aya="6" />
-    <juz index="13" name="يوسف" tname="Yusuf" sura="12" aya="53" />
-    <juz index="14" name="الحجر" tname="Al-Hijr" sura="15" aya="1" />
-    <juz index="15" name="الإسراء" tname="Al-Israa" sura="17" aya="1" />
-    <juz index="16" name="الكهف" tname="Al-Kahf" sura="18" aya="75" />
-    <juz index="17" name="الأنبياء" tname="Al-Anbiyaa" sura="21" aya="1" />
-    <juz index="18" name="المؤمنون" tname="Al-Muminoon" sura="23" aya="1" />
-    <juz index="19" name="الفرقان" tname="Al-Furqaan" sura="25" aya="21" />
-    <juz index="20" name="النمل" tname="An-Naml"  sura="27" aya="56" />
-    <juz index="21" name="العنكبوت" tname="Al-Ankaboot" sura="29" aya="46" />
-    <juz index="22" name="الأحزاب" tname="Al-Ahzaab" sura="33" aya="31" />
-    <juz index="23" name="يس" tname="Yaseen" sura="36" aya="28" />
-    <juz index="24" name="الزمر" tname="Az-Zumar" sura="39" aya="32" />
-    <juz index="25" name="فصلت" tname="Fussilat" sura="41" aya="47" />
-    <juz index="26" name="الأحقاف" tname="Al-Ahqaf"  sura="46" aya="1" />
-    <juz index="27" name="الذاريات" tname="Adh-Dhaariyat" sura="51" aya="31" />
-    <juz index="28" name="المجادلة" tname="Al-Mujaadila" sura="58" aya="1" />
-    <juz index="29" name="الملك" tname="Al-Mulk" sura="67" aya="1" />
-    <juz index="30" name="النبإ" tname="An-Naba" sura="78" aya="1" />
+	<juz index="1" name="الفاتحة" tname="Al-Faatiha" sura="1" aya="1" start="(آلم (آ-ل-م"/>
+	<juz index="2" name="البقرة" tname="Al-Baqara" sura="2" aya="142" start="سَيَقُولُ "/>
+	<juz index="3" name="البقرة" tname="Al-Baqara" sura="2" aya="253" start="تِلْكَ ٱلْرُّسُلُ "/>
+	<juz index="4" name="آل عمران" tname="Aal-i-Imraan" sura="3" aya="93" start="كُلُّ الطَّعَامِ "/>
+	<juz index="5" name="النساء" tname="An-Nisaa" sura="4" aya="24" start="وَٱلْمُحْصَنَاتُ "/>
+	<juz index="6" name="النساء" tname="An-Nisaa" sura="4" aya="148" start="لَا يُحِبُّ ٱللهُ "/>
+	<juz index="7" name="المائدة" tname="Al-Maaida" sura="5" aya="82" start="وَإِذَا سَمِعُوا "/>
+	<juz index="8" name="الأنعام" tname="Al-An'aam" sura="6" aya="111" start="وَلَوْ أَنَّنَا "/>
+	<juz index="9" name="الأعراف" tname="Al-A'raaf" sura="7" aya="88" start="قَالَ ٱلْمَلَأُ "/>
+	<juz index="10" name="الأنفال" tname="Al-Anfaal" sura="8" aya="41" start="وَٱعْلَمُواْ "/>
+	<juz index="11" name="التوبة" tname="At-Tawba" sura="9" aya="93" start="يَعْتَذِرُونَ "/>
+	<juz index="12" name="هود" tname="Hud" sura="11" aya="6" start="وَمَا مِنْ دَآبَّةٍ "/>
+	<juz index="13" name="يوسف" tname="Yusuf" sura="12" aya="53" start="وَمَا أُبَرِّئُ "/>
+	<juz index="14" name="الحجر" tname="Al-Hijr" sura="15" aya="1" start="رُبَمَا"/>
+	<juz index="15" name="الإسراء" tname="Al-Israa" sura="17" aya="1" start="سُبْحَانَ ٱلَّذِى "/>
+	<juz index="16" name="الكهف" tname="Al-Kahf" sura="18" aya="75" start="قَالَ أَلَمْ "/>
+	<juz index="17" name="الأنبياء" tname="Al-Anbiyaa" sura="21" aya="1" start="ٱقْتَرَبَ لِلْنَّاسِ "/>
+	<juz index="18" name="المؤمنون" tname="Al-Muminoon" sura="23" aya="1" start="قَدْ أَفْلَحَ "/>
+	<juz index="19" name="الفرقان" tname="Al-Furqaan" sura="25" aya="21" start="وَقَالَ ٱلَّذِينَ "/>
+	<juz index="20" name="النمل" tname="An-Naml" sura="27" aya="56" start="أَمَّنْ خَلَقَ "/>
+	<juz index="21" name="العنكبوت" tname="Al-Ankaboot" sura="29" aya="46" start="اتْلُ مَا أُوحِيَ "/>
+	<juz index="22" name="الأحزاب" tname="Al-Ahzaab" sura="33" aya="31" start="وَمَنْ يَّقْنُتْ "/>
+	<juz index="23" name="يس" tname="Yaseen" sura="36" aya="28" start="وَمَآ لي "/>
+	<juz index="24" name="الزمر" tname="Az-Zumar" sura="39" aya="32" start="فَمَنْ أَظْلَمُ "/>
+	<juz index="25" name="فصلت" tname="Fussilat" sura="41" aya="47" start="إِلَيْهِ يُرَدُّ "/>
+	<juz index="26" name="الأحقاف" tname="Al-Ahqaf" sura="46" aya="1" start="حم "/>
+	<juz index="27" name="الذاريات" tname="Adh-Dhaariyat" sura="51" aya="31" start="قَالَ فَمَا خَطْبُكُم "/>
+	<juz index="28" name="المجادلة" tname="Al-Mujaadila" sura="58" aya="1" start="قَدْ سَمِعَ ٱللهُ "/>
+	<juz index="29" name="الملك" tname="Al-Mulk" sura="67" aya="1" start="تَبَارَكَ ٱلَّذِى "/>
+	<juz index="30" name="النبإ" tname="An-Naba" sura="78" aya="1" start="عَمَّ "/>
 </quran>

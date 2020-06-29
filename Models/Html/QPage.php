@@ -30,42 +30,10 @@ class QPage extends HtmlGenerator
         return $out;
     }
     
-/*    public function get_visits_counter()
-    {
-        $errorPath = ini_get('error_log');
-        $fp = fopen("counter.txt", "r+");
-        if(!$fp)return 100;
-        while(!flock($fp, LOCK_EX)) {  // acquire an exclusive lock
-        // waiting to lock the file
-        }
-        $data="";
-        $data .= fread($fp, 100);
-        $temp = $data;//'500S';
-        try
-        {
-        $x = intval($temp);
-        }
-        catch(Exception $e)
-        {
-            echo 'Message: ' .$e->getMessage();
-        }
-        $x++;
-
-        ftruncate($fp, 0);      // truncate file
-        fwrite($fp, $x);  // set your data
-        fflush($fp);            // flush output before releasing the lock
-        flock($fp, LOCK_UN);    // release the lock
-        fclose($fp);
-        
-        return $x;
-    }
-*/
     public function generate()
     {
-        //$buffer = '<div id="margin_column" class="margin_column" ></div>';
         $buffer = $this->gen_control('div', array(new attribute('id', 'margin_column'), new attribute('class', 'margin_column')),'');
         
-       
         $canvas = $this->gen_control('canvas',              array(new attribute('id', 'pages_canvas'),
                                                             new attribute('width', '650'), 
                                                             new attribute('height', '842'),
@@ -89,8 +57,6 @@ class QPage extends HtmlGenerator
                 . '<img border="0" alt="prev" src="images/previous.png" width="20" height="20"></a>';
 
         $buffer .= $this->gen_control('span', array(new attribute('class', 'visit_counter')), $this->get_visits_counter());
-        
-
         return $buffer;
     }
     

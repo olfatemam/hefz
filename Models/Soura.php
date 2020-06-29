@@ -59,62 +59,87 @@ class Soura
         
     public function gen_html($engine)
     {
-        return $engine->gen_control('a', array(new attribute('id', 'sura'.$this->index), 
-                new attribute('href', 'javascript:void(0)'),
+        $a =  $engine->gen_control('a', array(new attribute('id', 'sura'.$this->index), 
+                //new attribute('href', 'javascript:void(0)'),
+                new attribute('class', 'w3-large w3-center'),
+                new attribute('style', 'padding-left:0;padding-right:0'),
                 new attribute('onclick', 'goto_sura('.$this->index.', 1)')), $this->name);
+    
+        return "<li class='w3-col m6 l2 s12 w3-border w3-center w3-right' style='padding-left:0;padding-right:0'>".$a."</li>";
     }
 }
 
-class suras extends HtmlGenerator
+class Suras extends HtmlGenerator
 {
-    private $suras_info=array();
-
+    private $Suras_info=array();
+    
+public function __construct() {
+    
+    $this->Suras_info=array();
+    
+    $config = include('config/app.php');
+    
+    $this->read_quran_sura_xml($config['app_root'].'/data/quran-data.xml');
+}
     public function get_sura_by_index($sura_index)
     {
-        return $this->suras_info[$sura_index];
+        return $this->Suras_info[$sura_index];
     }
 
     public function read_quran_sura_xml($quran_data_file)
     {
+        //var_dump($quran_data_file);
         $root_obj = simplexml_load_file($quran_data_file);
+        //var_dump($root_obj);
         foreach($root_obj->suras as $node1 )
         {
+            //var_dump($node1);
             foreach($node1 as $node )
             {
-                $this->suras_info[intval($node->attributes()->index)]= new Soura($node->attributes());
+                $this->Suras_info[intval($node->attributes()->index)]= new Soura($node->attributes());
             }
         }
     }
-/*   //construct here the combo box 
-    private function form_attr($prop, $val)
+    
+    public function create_ul()
     {
-        $combind =  ' '. $prop.'="' .$val.'" ';
-        return $combind;
-    }
-  */  
-
+        //$this->read_quran_sura_xml('data/quran-data.xml');
+        $ul = '<ul class="w3-ul">';
+        
+        foreach($this->Suras_info as $suraobj)
+        {
+            $sura = $suraobj->gen_html($this);
+            $ul .= $sura;
+        }
+        $ul .='</ul>';
+        //var_dump($ul);
+        return $ul;
+    }  
+    
+    
     public function create_menu()
     {
-        $this->read_quran_sura_xml('data/quran-data.xml');
-
-        $menu ='<li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn" onclick=show_menu("sura_menu_div")>Goto Surah</a>
-                <div id="sura_menu_div" class="dropdown-content">';
         
-        foreach($this->suras_info as $suraobj)
+        
+    $menu = '<div class="q_menu_dropdown w3-dropdown-hover">'
+        . '<button class="w3-button ">Goto Soura</button>'
+        . '<div class="q_menu_content w3-dropdown-content w3-card-4 w3-padding" style="width:50%">'
+        . '<ul class="w3-ul " >';
+
+//$menu.='</div></div>';
+
+        foreach($this->Suras_info as $suraobj)
         {
             $sura = $suraobj->gen_html($this);
             $menu .= $sura;
         }
-        $menu .= '</div></li>';
+        $menu .='</ul></div></div>';
         return $menu;
     }  
     public function create_list()
     {
-        $this->read_quran_sura_xml('data/quran-data.xml');
-
         $options='';
-        foreach($this->suras_info as $suraobj)
+        foreach($this->Suras_info as $suraobj)
         {    
             
             $options = $options . $this->gen_control('option', array(new attribute('value', $suraobj->index),

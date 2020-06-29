@@ -65,23 +65,23 @@ class Soura
     }
 }
 
-class suras extends HtmlGenerator
+class Suras extends HtmlGenerator
 {
-    private $suras_info=array();
+    private $Suras_info=array();
 
     public function get_sura_by_index($sura_index)
     {
-        return $this->suras_info[$sura_index];
+        return $this->Suras_info[$sura_index];
     }
 
     public function read_quran_sura_xml($quran_data_file)
     {
         $root_obj = simplexml_load_file($quran_data_file);
-        foreach($root_obj->suras as $node1 )
+        foreach($root_obj->Suras as $node1 )
         {
             foreach($node1 as $node )
             {
-                $this->suras_info[intval($node->attributes()->index)]= new Soura($node->attributes());
+                $this->Suras_info[intval($node->attributes()->index)]= new Soura($node->attributes());
             }
         }
     }
@@ -101,7 +101,7 @@ class suras extends HtmlGenerator
                 <a href="javascript:void(0)" class="dropbtn" onclick=show_menu("sura_menu_div")>Goto Surah</a>
                 <div id="sura_menu_div" class="dropdown-content">';
         
-        foreach($this->suras_info as $suraobj)
+        foreach($this->Suras_info as $suraobj)
         {
             $sura = $suraobj->gen_html($this);
             $menu .= $sura;
@@ -114,7 +114,7 @@ class suras extends HtmlGenerator
         $this->read_quran_sura_xml('data/quran-data.xml');
 
         $options='';
-        foreach($this->suras_info as $suraobj)
+        foreach($this->Suras_info as $suraobj)
         {    
             
             $options = $options . $this->gen_control('option', array(new attribute('value', $suraobj->index),

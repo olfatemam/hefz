@@ -29,9 +29,12 @@ class MainPageController extends HtmlGenerator
     public function __construct()
     {
         $this->buffer='';
+        
+        $config = include('config/app.php');
+        $this->title = $config['title'];
     }
     private $buffer="";
-    
+    public  $title;
     
     private function is_mobile_agent()
     {
@@ -52,7 +55,9 @@ class MainPageController extends HtmlGenerator
         
         $header=new Header();
         $ControlBlock_obj=new ControlBlock();
-        $Quran_page_obj = new QPage();
+        
+        
+        //$Quran_page_obj = new QPage();
 
         $this->buffer = $header->generate_page_header();
         $this->buffer .= '<body unselectable="on">';
@@ -62,7 +67,7 @@ class MainPageController extends HtmlGenerator
         
         $this->buffer .= $ControlBlock_obj->generate();
         
-        $this->buffer .= $Quran_page_obj->generate();
+        $this->buffer .= (new QPage())->generate();
 
         $this->buffer .= '</div></body>';
 

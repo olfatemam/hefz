@@ -11,12 +11,12 @@
 class TheBookAttributes
 {
     private $pages;
-    public $suras;
+    public $Suras;
 
     function __construct()
     {
         $this->pages = new pages;
-        $this->suras = new suras;
+        $this->Suras = new Suras;
     }
 
     public function get_pages()
@@ -36,7 +36,7 @@ class TheBookAttributes
 
     public function read_quran_sura_xml($quran_data_file)
     {
-        $this->suras->read_quran_sura_xml($quran_data_file );
+        $this->Suras->read_quran_sura_xml($quran_data_file );
     }
 
     public function read_from_svg_generated_pages_xml($rootpath)

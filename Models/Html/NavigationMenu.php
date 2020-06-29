@@ -8,39 +8,30 @@ class NavigationMenu //extends HtmlGenerator
     //put your code here
     public function generate()
     {
-     $var = '<ul>
-                
-                <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropbtn">Dropdown1</a>
-                  <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                  </div>
-                </li>
-              </ul>';   
+        $buffer = '<div id="main_menu" class="w3-bar w3-light-grey w3-border w3-padding">';
         
-        $buffer = '<ul>';
-        $buffer .= $this->gen_suras_menu();
-        $buffer .= $this->gen_juz_menu();
-        $buffer .='</ul>';
-        //file_put_contents("hefz.log", $buffer);
-
-        //$buffer .=  '</div>';
+        $buffer .= $this->gen_Suras_menu();
+        //$buffer .= $this->gen_juz_menu();
+        
+        $buffer .='<button class="w3-bar-item w3-button w3-green w3-mobile w3-right" onclick="goto_page()">Go</button>';
+        $buffer .= '<input type="number" id="input_page_number" class="w3-bar-item w3-input w3-white w3-mobile w3-right" placeholder="Page Number.." min="1">';
+        
+        
+        $buffer .='</div>';
         return $buffer; 
     }    
 
     private function gen_juz_menu()
     {
-        $juzs_obj = new juzs();
+        $juzs_obj = new Juzs();
         $juzslist = $juzs_obj->create_menu();
         return $juzslist;
     }   
     
-    private function gen_suras_menu()
+    private function gen_Suras_menu()
     {
-        $souras_obj = new suras();
-        $suraslist = $souras_obj->create_menu();
-        return $suraslist;
+        $souras_obj = new Suras();
+        $Suraslist = $souras_obj->create_menu();
+        return $Suraslist;
     }   
 }

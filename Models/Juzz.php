@@ -5,13 +5,14 @@
  * https://www.upwork.com/freelancers/~011afaac378ad2d181
  */
 
-require_once 'Models\Html\HtmlGenerator.php';
+//require_once 'Models\Html\HtmlGenerator.php';
 
 class Juzz {
     public $index;
     public $name;
     public $sura_num;
     public $aya;
+    public $start;
 
     public function __construct($node)
     {
@@ -19,75 +20,52 @@ class Juzz {
         $this->name  = $node->name->__toString();
         $this->sura_num  = intval($node->sura);
         $this->aya = intval($node->aya);
+        $this->start = ($node->start);
     }
     
-    public function gen_juzz_html($engine, $souras_obj, $nextsura, $nextaya)
+    public function generate_anchor($engine)
     {
         
-        $input= $engine->gen_control('input', 
-                array(
-                new attribute('id', 'jac-'.$this->index), 
-                new attribute('name', 'jac-'.$this->index),
-                new attribute('class', 'ac-input'),
-                new attribute('type', 'checkbox'),
-                new attribute('onclick', '')), '');
+        //$text = '<span>'.$this->id</span>'.$this->name . ':'.  $this->start;
+        $id =  $engine->gen_control('div', array(new attribute('class', 'w3-col m1 w3-right')), $this->index);
+        $name =  $engine->gen_control('div', array(new attribute('class', 'w3-col m4 w3-right')), $this->name);
+        $start =  $engine->gen_control('div', array(new attribute('class', 'w3-col m6 w3-right')), $this->start);
         
-        $label= $engine->gen_control('label', 
-                array(
-                new attribute('for', 'jac-'.$this->index),
-                new attribute('class', 'ac-label')), $this->name);
         
-        $article = $engine->gen_control('article', array(new attribute('class', 'ac-text')), '');
-        
-        $buffer =  $engine->gen_control('div', array(new attribute('class', 'ac')), $input.$label.$article); 
-        //$souras_obj get all suras in this juzz
-        return $buffer;
-    }
-
-    public function gen_juzz_html0($htmlgen)
-    {
-        return $htmlgen->gen_control('a', array(new attribute('id', 'juz'.$this->index), 
-                new attribute('href', 'javascript:void(0)'),
-                new attribute('onclick', 'goto_sura('.$this->sura_num.','.$this->aya.')')),$this->index);
+        $a =  $engine->gen_control('a', array(new attribute('id', 'juz'.$this->index), 
+                new attribute('class', 'w3-large '),
+                new attribute('style', 'width:100%'),
+                new attribute('onclick', 'goto_sura('.$this->sura_num.','. $this->aya.')')),  $id.$name.$start);
     
-
+        return $a;
     }
-    
 }
-class juzs extends HtmlGenerator
+class Juzs extends HtmlGenerator
 {
     private $juzs_array = array();
 
-    public function read_from_xml()
+    public function init_juzzs_array_from_xml()
     {
-        $root_obj = simplexml_load_file('data/juz_data.xml');
+        $config = include('config/app.php');
+        $root_obj = simplexml_load_file($config['app_root'].'/data/juz_data.xml');
+        
         foreach($root_obj as $node )
         {
             $this->juzs_array[]= new Juzz($node->attributes());
         }
     }
 
-    public function create_menu()
+    public function generate_ul_list()
     {
-        $this->read_from_xml();
-        $souras_obj = new suras();
-        $menu ='<li class="dropdown" style="float:right;">'.
-                 '<a href="javascript:void(0)" class="dropbtn" onclick=show_menu("juzz_menu_div")>Goto Juzz</a>'.
-                 '<div id="juzz_menu_div" class="dropdown-content">';
-        $nextaya=0;
-        $nextsura=0;
-        $nJuzzs = count($this->juzs_array);
-        for($i=0; $i<$nJuzzs;$i++ )
-        {
-            if(($i+1) < $nJuzzs)
-            {
-                $nextsura = $this->juzs_array[$i+1]->sura_num;
-                $nextaya = $this->juzs_array[$i+1]->aya;
-            }
-            $menu .=$this->juzs_array[$i]->gen_juzz_html($this, $souras_obj, $nextsura, $nextsura);
-        }
-        $menu .= '</div></li>';
+        $this->init_juzzs_array_from_xml();
         
+        $menu ='<ul class="w3-ul w3-card-4 w3-right w3-right-align">';
+        
+        foreach($this->juzs_array as $juzz)
+        {
+            $menu .="<li class='w3-right w3-bar' style='width:100%'>". $juzz->generate_anchor($this).'</li>';
+        }
+        $menu .='</ul>';
         return $menu;
     }  
 }

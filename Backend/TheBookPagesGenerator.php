@@ -185,7 +185,7 @@ class TheBookPagesGenerator
 
         for ($sura_num = 1; $sura_num <= 114; $sura_num++)
         {
-            $sura = $q_info->suras->get_sura_by_index( $sura_num );
+            $sura = $q_info->Suras->get_sura_by_index( $sura_num );
             $pchapter = new Chapter( $sura->name, $sura_num, $sura->ayas );
             $page_num = $this->setup_chapter_paging($q_info, $pchapter, $page_num);
             $this->ChapterArray[$sura_num - 1] = $pchapter;
