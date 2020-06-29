@@ -23,21 +23,21 @@ class Juzz {
         $this->start = ($node->start);
     }
     
-    public function generate_anchor($engine)
+    public function generate_table_row($engine)
     {
+        $row='<tr onclick="goto_sura('.$this->sura_num. ','. $this->aya. ')">';
         
-        //$text = '<span>'.$this->id</span>'.$this->name . ':'.  $this->start;
-        $id =  $engine->gen_control('div', array(new attribute('class', 'w3-col m1 w3-right')), $this->index);
-        $name =  $engine->gen_control('div', array(new attribute('class', 'w3-col m4 w3-right')), $this->name);
-        $start =  $engine->gen_control('div', array(new attribute('class', 'w3-col m6 w3-right')), $this->start);
+        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right w3-right-align w3-col m1')), $this->index);
+
+        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right w3-right-align w3-col m2')), $this->name);
+        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right w3-right-align w3-col m1')), $this->sura_num);
+        
+        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right-align w3-right w3-col m1')), $this->aya);
+        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right w3-right-align w3-col m7')), $this->start);
+        $row.="</tr>";
         
         
-        $a =  $engine->gen_control('a', array(new attribute('id', 'juz'.$this->index), 
-                new attribute('class', 'w3-large '),
-                new attribute('style', 'width:100%'),
-                new attribute('onclick', 'goto_sura('.$this->sura_num.','. $this->aya.')')),  $id.$name.$start);
-    
-        return $a;
+        return $row;
     }
 }
 class Juzs extends HtmlGenerator
@@ -55,17 +55,28 @@ class Juzs extends HtmlGenerator
         }
     }
 
-    public function generate_ul_list()
+    public function generate_table()
     {
         $this->init_juzzs_array_from_xml();
+        $header=['جزء', 'سورة','رقم السورة','آية','بداية الجزء'];
+        //$menu ='<ul class="w3-ul  -align" style="width:100%">';
+        $table ='<table class="w3-table w3-table-all w3-right-align w3-right w3-bordered w3-hoverable" style="width:100%;">';
         
-        $menu ='<ul class="w3-ul w3-card-4 w3-right w3-right-align">';
+        $row='<tr class="w3-right w3-right-align">';
+        
+        foreach($header as $celltext)
+        {
+            $row .= '<th class="w3-right w3-right-align">'.$celltext.'</th>';
+        }
+        $row .='</tr>';
+        
+        $table .=$row;
         
         foreach($this->juzs_array as $juzz)
         {
-            $menu .="<li class='w3-right w3-bar' style='width:100%'>". $juzz->generate_anchor($this).'</li>';
+            $table .=$juzz->generate_table_row($this);
         }
-        $menu .='</ul>';
-        return $menu;
+        $table .='</table>';
+        return $table;
     }  
 }

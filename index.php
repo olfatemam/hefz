@@ -41,13 +41,11 @@ echo (new Header())->generate_page_header();
         echo $x->create_ul();
         ?>
   </div>
-  <div id="GotoJuzz" class="w3-container w3-border mytab" style="display:none">
-      <div class="w3-container">
+  <div id="GotoJuzz" class="w3-container w3-border w3-card-4 w3-right w3-right-align w3-right mytab" style="direction: rtl;width:100%;display:none;margin-left: 0;margin-right: 0">
         <?php
             $x = new Juzs();
-            echo $x->generate_ul_list();
+            echo $x->generate_table();
         ?>
-  </div>
   </div>
 </div>
 <!-- Page Content -->
