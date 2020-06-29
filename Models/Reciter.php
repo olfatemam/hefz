@@ -53,6 +53,7 @@ class reciters extends HtmlGenerator
         }
        
        $combo =  $this->gen_control('select', array(new attribute('name', 'reciters'),
+                                                        new attribute('class', 'w3-select w3-border'),
                                                         new attribute('id', 'reciter'),
                                                         new attribute('dir', 'rtl')), $options); 
         return $combo ;

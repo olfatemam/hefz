@@ -8,13 +8,19 @@ class ControlBlock extends HtmlGenerator
     }
     public function gen_goto_div()
     {
-        $goto =  '<table><tr><td style="display:inline-table;margin-top:10px;">';
-        $goto .=  $this->gen_control('label', array(new attribute('class','inlinelabel'), new attribute('for', "input_page_number")), 'Goto Page');
-
-        $goto .=  $this->gen_control('input', array(new attribute('class','goto_page_input'), new attribute('type','number'),new attribute('id', "input_page_number"),
+        $goto =  '<table class="w3-table w3-margin-top" style="width:100%"><tr><td class="" style="width:80%;padding:0;vertical-align: middle;">';
+        
+        $goto .=  $this->gen_control('input', array(new attribute('class','w3-input w3-white'), 
+                                                    new attribute('style','width:100%;vertical-align: middle;'),
+                                                    new attribute('type','number'),
+                                                    new attribute('placeholder','Page Number'),
+                                                    new attribute('id', "input_page_number"),
                                                     new attribute('min', '1'), new attribute('max', '604')), '');
-
-        $goto .=  $this->gen_control('button', array(new attribute('class','goto_page_btn'), new attribute('id', "goto_page_btn"),new attribute('onclick', 'goto_page()')), 'Go');
+        $goto .=  '</td><td class="" style="width:20%;padding:0;vertical-align: middle;">';
+        $goto .=  $this->gen_control('button', array(new attribute('class','w3-button w3-blue'), 
+                                                     new attribute('style','width:100%;'),
+                                                     new attribute('id', "goto_page_btn"),
+                                                     new attribute('onclick', 'goto_page()')), 'Go');
 
         $goto .='</td></tr></table>';
         return $goto;
@@ -22,20 +28,15 @@ class ControlBlock extends HtmlGenerator
     
     public function generate_body()
     {
-        $buffer = $this->gen_open_tag('div', array(new attribute('class', 'control-column')), '');
+        $buffer = $this->gen_open_tag('div', array(new attribute('class', 'control-column1')), '');
 
-        //here olfat
         
-        //$navmen= new NavigationMenu();
         $goto=$this->gen_goto_div();
         
-        //$menu= $navmen->generate();
         
-        //$buffer .= $this->fill_container('div', array(new attribute('class', 'controlls_head')), $menu.$goto);
+        $buffer .= $this->fill_container('div', array(new attribute('class', 'controlls_head1')), $goto);
         
-        $buffer .= $this->fill_container('div', array(new attribute('class', 'controlls_head')), $goto);
-        
-        $buffer .= $this->fill_container('div', array(new attribute('class', 'left_control_box')), $this->gen_left_side_data_block());
+        $buffer .= $this->fill_container('div', array(new attribute('class', 'w3-card w3-border')), $this->gen_left_side_data_block());
         
         $buffer .= '</div>';
 
@@ -82,31 +83,44 @@ class ControlBlock extends HtmlGenerator
         $Suraslist = $souras_obj->create_list();
         return $this->gen_select_tag_tbl_row($Suraslist, 'soura', 'Surah:', '');
     }   
-    private function gen_from_list()        
-    {        
-        return $this->gen_entity_row('select', array(new attribute('for','from_list')), 'From:',array(new attribute('id','from_list'), new attribute('onchange', 'on_from_changed()')));
-    }
-    private function gen_to_list()        
-    {        
-        return $this->gen_entity_row('select', array(new attribute('for','to_list')), 'To:', array(  new attribute('id','to_list'),new attribute('onchange', 'on_to_changed()')));
-    }
-    
+//    
+//    public function gen_from_list()        
+//    {        
+//        return $this->gen_control('select',
+//                array(new attribute('class','w3-select w3-border'), 
+//                    new attribute('id','from_list'), 
+//                    new attribute('onchange', 'on_from_changed()')));
+//    }
+//    public function gen_to_list()        
+//    {        
+//        return $this->gen_control('select', array(  
+//                    new attribute('class','w3-select w3-border'),
+//                    new attribute('id','to_list'),new attribute('onchange', 'on_to_changed()')));
+//    }
+//    
     private function gen_repeat_all_number()
     {
-        return $this->gen_entity_row('input', array(new attribute('for','repeat_all')), 'Repeat Range:', array(new attribute('id','repeat_all'), new attribute('value', '1'), new attribute('type', 'number')));
+        return $this->gen_entity_row('input', 
+                array(new attribute('for','repeat_all')), 'Repeat:', 
+                array(
+                    new attribute('class','w3-input w3-border'),
+                    new attribute('id','repeat_all'), new attribute('value', '1'), new attribute('type', 'number')));
     }
     
     private function gen_left_side_data_block()
     {
 
         $buffer =  $this->gen_error_label();
-        $buffer .= $this->gen_open_tag('table', array(new attribute('class', 'control_table')));
+        $buffer .= $this->gen_open_tag('table', array(new attribute('class', 'control_table1 w3-table')));
         $buffer .= $this->gen_reciters_list();
         $buffer .= $this->gen_Suras_list();
         $buffer .= $this->gen_tafseer_list();
         $buffer .= $this->gen_from_list();
         $buffer .= $this->gen_to_list();
         $buffer .= $this->gen_repeat_all_number();
+        
+        
+        
         $buffer .= '</table>';
         $buffer .= $this->generate_repeat_each_div();
         

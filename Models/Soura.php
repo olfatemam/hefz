@@ -57,13 +57,17 @@ class Soura
     }
             
         
-    public function gen_html($engine)
+    public function generate_list_item($engine)
     {
+        $span1 =  $engine->gen_control('p', array(new attribute('class', '')),$this->index);
+        $span2 =  $engine->gen_control('p', array(new attribute('class', '')),$this->name);
+        
+                
         $a =  $engine->gen_control('a', array(new attribute('id', 'sura'.$this->index), 
-                //new attribute('href', 'javascript:void(0)'),
+                
                 new attribute('class', 'w3-large w3-center'),
-                new attribute('style', 'padding-left:0;padding-right:0'),
-                new attribute('onclick', 'goto_sura('.$this->index.', 1)')), $this->name);
+                new attribute('style', 'padding-left:0;padding-right:0;width:100%'),
+                new attribute('onclick', 'goto_sura('.$this->index.', 1)')), $span1.$span2);
     
         return "<li class='w3-col m6 l2 s12 w3-border w3-center w3-right' style='padding-left:0;padding-right:0'>".$a."</li>";
     }
@@ -88,12 +92,10 @@ public function __construct() {
 
     public function read_quran_sura_xml($quran_data_file)
     {
-        //var_dump($quran_data_file);
         $root_obj = simplexml_load_file($quran_data_file);
-        //var_dump($root_obj);
+        
         foreach($root_obj->suras as $node1 )
         {
-            //var_dump($node1);
             foreach($node1 as $node )
             {
                 $this->Suras_info[intval($node->attributes()->index)]= new Soura($node->attributes());
@@ -101,18 +103,17 @@ public function __construct() {
         }
     }
     
-    public function create_ul()
+    public function generate_ul_list()
     {
-        //$this->read_quran_sura_xml('data/quran-data.xml');
         $ul = '<ul class="w3-ul">';
         
         foreach($this->Suras_info as $suraobj)
         {
-            $sura = $suraobj->gen_html($this);
+            $sura = $suraobj->generate_list_item($this);
             $ul .= $sura;
         }
         $ul .='</ul>';
-        //var_dump($ul);
+        
         return $ul;
     }  
     
@@ -148,6 +149,7 @@ public function __construct() {
         }
         
        $combo =  $this->gen_control('select', array(new attribute('name', 'soura'),
+                                                        new attribute('class', 'w3-select w3-border'),
                                                         new attribute('id', 'soura'),
                                                         new attribute('dir', 'rtl')), $options); 
         

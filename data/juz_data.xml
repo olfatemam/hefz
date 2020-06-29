@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <quran>
-	<juz index="1" name="الفاتحة" tname="Al-Faatiha" sura="1" aya="1" start="(آلم (آ-ل-م"/>
+	<juz index="1" name="الفاتحة" tname="Al-Faatiha" sura="1" aya="1" start="آلم "/>
 	<juz index="2" name="البقرة" tname="Al-Baqara" sura="2" aya="142" start="سَيَقُولُ "/>
 	<juz index="3" name="البقرة" tname="Al-Baqara" sura="2" aya="253" start="تِلْكَ ٱلْرُّسُلُ "/>
 	<juz index="4" name="آل عمران" tname="Aal-i-Imraan" sura="3" aya="93" start="كُلُّ الطَّعَامِ "/>

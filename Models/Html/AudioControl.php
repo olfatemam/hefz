@@ -25,14 +25,7 @@ class AudioControl extends HtmlGenerator{
 
         $buffer = $this->gen_control('div', $td_attrrs, $audiobuffer);
 
-/*
-        $buffer .= $this->gen_control('td', $td_attrrs, $this->gen_play_button());
-        $buffer .= $this->gen_control('td', $td_attrrs, $this->gen_stop_button());
-        $buffer .= $this->gen_control('td', $td_attrrs, $this->gen_progress_bar());
-        $buffer .= $this->gen_control('td', $td_attrrs, $this->gen_vol_button());
-        $buffer .= $this->gen_control('td', $td_attrrs, $this->gen_vol_bar());
-        $buffer .= '</tr><tr>';
-          */      
+        
         $buffer .= '<table class="audiotable" valign="middle"><tr>';
         $buffer .= $this->gen_control('td', null, '<audio id="audio"></audio>');
         

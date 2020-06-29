@@ -55,11 +55,11 @@ class HtmlGenerator {
     
     protected function gen_select_tag_tbl_row($combo, $for, $text, $extracell)
     {
-        $buffer = '<tr style="height:35px;">';
+        $buffer = '<tr style="">';
 
         $buffer .= $this->fill_container('td ', 
-                array(new Attribute('class', 'titlename')), 
-                $this->gen_control('label', array(new Attribute('class','_label'), new Attribute('for',$for)), $text));
+                array(new Attribute('class', 'titlename1')), 
+                $this->gen_control('label', array(new Attribute('class','_label1'), new Attribute('for',$for)), $text));
         
         $buffer .= $this->fill_container('td', null, $combo.$extracell);
 

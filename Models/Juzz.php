@@ -33,7 +33,7 @@ class Juzz {
         $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right w3-right-align w3-col m1')), $this->sura_num);
         
         $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right-align w3-right w3-col m1')), $this->aya);
-        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right w3-right-align w3-col m7')), $this->start);
+        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-large  w3-right w3-right-align w3-col m7')), $this->start);
         $row.="</tr>";
         
         
@@ -60,9 +60,9 @@ class Juzs extends HtmlGenerator
         $this->init_juzzs_array_from_xml();
         $header=['جزء', 'سورة','رقم السورة','آية','بداية الجزء'];
         //$menu ='<ul class="w3-ul  -align" style="width:100%">';
-        $table ='<table class="w3-table w3-table-all w3-right-align w3-right w3-bordered w3-hoverable" style="width:100%;">';
+        $table ='<table class="w3-table w3-table-all w3-right-align w3-right w3-border w3-hoverable" style="width:100%;">';
         
-        $row='<tr class="w3-right w3-right-align">';
+        $row='<tr class="w3-right w3-right-align" style="width:100%">';
         
         foreach($header as $celltext)
         {
