@@ -29,10 +29,12 @@ function start() {
     //canvas.fillRect(x - 25, y - 25, 100, 100);
 }
 */
+
 function next()
 {
     g_Pages.load_next();
 }
+
 
 function prev()
 {

@@ -260,7 +260,8 @@ QPage.prototype.refresh_page=function()
             busy=false;
         }
     }
-    img.src = this.page_url;//url;
+    img.src = this.page_url;//url
+    document.getElementById('page_num').textContent=this.page_num;
 }
 
 function transferFailed(evt) {
@@ -276,7 +277,8 @@ QPage.prototype.draw_page= function()
         return;
     }
     var sfilename = zeroFill(this.page_num, 3);
-    this.page_url = encodeURI('data/pages/png/' + sfilename + '.png');//_595x841
+    //this.page_url = encodeURI('http://hidayah-institute.com/almurattal/eApp/data/pages/png/' + sfilename + '.png');//_595x841
+    this.page_url = encodeURI('http://hidayah-institute.com/almurattal/eApp/data/pages/png/' + sfilename + '.png');//_595x841
     this.refresh_page();
 };
 
@@ -443,14 +445,6 @@ function read_int(value)
     if (value!="")
         ival = parseInt(value, 10);
     return ival;
-}
-function hide_dropdowns()
-{
-    divsToHide = document.getElementsByClassName ('w3-dropdown-content');
-    for(var i = 0; i < divsToHide.length; i++)
-    {
-        divsToHide[i].style.display = "none"; // depending on what you're doing
-    }
 }
 
 QPages.prototype.set_active_page=function(sura, aya)
