@@ -2,6 +2,7 @@
 <div class="w3-card w3-white w3-padding" style="width:100%;">
 <table class="control_table1 w3-table">
 <tbody>
+<tr class="w3-padding"><td><label for="translation">Translation:</label></td><td> <?php echo (new Tafseers())->create_list();?></td></tr>
 <tr>
 <td colspan="2">
 <div class="tafseer_block">

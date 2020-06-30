@@ -30,18 +30,16 @@
 require_once 'Controllers/MainPageController.php';
 ?>
 
-<div class="w3-container">
 <div class="w3-row">
-    <div class="w3-col m12 l3 s12 w3-light-gray" >
+    <div class="w3-col w3-container w3-light-gray" style="width:30%;height:1000px">
         <?php include('views/leftsection.php') ?>
     </div>
-    <div class="w3-col m12 l6 s12 w3-light-gray" >
+    <div class="w3-col w3-container w3-light-grey" style="width:40%;height:1000px;min-width: 700px;">
         <?php include('views/quran.php') ?>
     </div>
-    <div class="w3-col m12 l3 s12 w3-light-gray" >
+    <div class="w3-col w3-container w3-light-gray" style="width:30%;height:1000px">
         <?php include('views/rightsection.php') ?>
     </div>
-</div>
 </div>
 
 

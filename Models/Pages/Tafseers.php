@@ -35,7 +35,8 @@ class Tafseers extends HtmlGenerator
         $combo =  $this->gen_control('select', array(new attribute('name', 'Tafseers'),
                                                         new attribute('id', 'tafseer'),
                                                         new attribute('class', 'w3-select w3-border'),
-                                                        new attribute('dir', 'rtl')), $options); 
+                                                        //new attribute('dir', 'rtl')
+                                                        ), $options); 
         
         return $combo ;
     }  
