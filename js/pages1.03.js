@@ -262,6 +262,7 @@ QPage.prototype.refresh_page=function()
     }
     img.src = this.page_url;//url
     document.getElementById('page_num').textContent=this.page_num;
+    document.getElementById('input_page_number').value=this.page_num;
 }
 
 function transferFailed(evt) {

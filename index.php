@@ -34,7 +34,7 @@
 <script src="js/ihfaz7.js"></script>
 <script src="js/verserect12.js"></script>
 <script src="js/verse8.js"></script>
-<script src="js/pages1.02.js"></script>
+<script src="js/pages1.03.js"></script>
 <script src="js/media8.js"></script>
 
 

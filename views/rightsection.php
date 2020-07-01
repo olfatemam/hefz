@@ -4,7 +4,7 @@
     <button style="height: 35px;" class="tablink w3-col m4" onclick="openTab(event,'GotoJuzz')">Juzz Index</button>
 </div>
 <div id="Recitation" class="w3-container w3-border mytab" >
-<div class="w3-card w3-border" style="width:90%">
+<div class="w3-card w3-border w3-padding">
 <div class='w3-panel w3-padding w3-margin'>
     <label id="ehfaz_error" style="color:red;"></label>
 </div>
@@ -13,7 +13,7 @@
 <table class="w3-table w3-table-all">
 <tbody>
 <tr>
-<td><label for="input_page_number">Goto Page:</label></td>
+<td><label for="input_page_number">Goto:</label></td>
 <td>
 <div class='w3-col l10 s810 m10'><input class="w3-input" id="input_page_number"  style="width:100%" type="number" min="1" max="604" >
 </div>
