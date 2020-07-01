@@ -151,7 +151,8 @@ public function __construct() {
        $combo =  $this->gen_control('select', array(new attribute('name', 'soura'),
                                                         new attribute('class', 'w3-select w3-border'),
                                                         new attribute('id', 'soura'),
-                                                        new attribute('dir', 'rtl')), $options); 
+                                                        //new attribute('dir', 'rtl')
+           ), $options); 
         
         return $combo ;
     }  
