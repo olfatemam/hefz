@@ -6,13 +6,7 @@
  * https://www.upwork.com/freelancers/~011afaac378ad2d181
  */
 
-g_Pages = new QPages();
 
-g_QMedia = new QMedia();
-
-g_QIhfazPage = new QIhfazPage();
-
-audio_initialized = false;
 
 //initial_vol=0;
 

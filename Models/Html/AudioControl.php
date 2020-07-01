@@ -35,11 +35,13 @@ class AudioControl extends HtmlGenerator{
 
     private function gen_play_button()
     {
-        return $this->gen_control('button', array(new attribute('id', 'pButton'), new attribute('style', 'display:inline-block;'), new attribute('onclick', 'playAudio()')), null);
+        return $this->gen_control('button', array(new attribute('id', 'pButton'), new attribute('style', 'display:inline-block;'), 
+            new attribute('onclick', 'playAudio()')), null);
     }
     private function gen_stop_button()
     {
-        return $this->gen_control('button', array(new attribute('id', 'stopbutton'), new attribute('style', 'display:inline-block;'), new attribute('onclick', 'stopAudio()')), null);
+        return $this->gen_control('button', array(new attribute('id', 'stopbutton'), new attribute('style', 'display:inline-block;'), 
+            new attribute('onclick', 'stopAudio()')), null);
     }
 
     private function gen_vol_button()

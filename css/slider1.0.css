@@ -26,7 +26,7 @@ input[type='range']::-webkit-slider-thumb {
         margin-top: -6px;
 }
 input[type='range']::-webkit-slider-thumb:hover { 
-        background: #fdd921;
+        background: yellow;
 }
 input[type='range']:active::-webkit-slider-thumb { 
         background: #fdd921; 

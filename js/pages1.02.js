@@ -277,8 +277,11 @@ QPage.prototype.draw_page= function()
         return;
     }
     var sfilename = zeroFill(this.page_num, 3);
+        this.img_ext=page_ext;
+    this.pages_root=pages_root;
+
     //this.page_url = encodeURI('http://hidayah-institute.com/almurattal/eApp/data/pages/png/' + sfilename + '.png');//_595x841
-    this.page_url = encodeURI('http://hidayah-institute.com/almurattal/eApp/data/pages/png/' + sfilename + '.png');//_595x841
+    this.page_url = encodeURI(this.pages_root + sfilename + this.img_ext);//_595x841
     this.refresh_page();
 };
 
@@ -306,8 +309,10 @@ QPage.prototype.highlight_verse=function(ctx)
         
 };
 
-function QPages()
+function QPages(page_ext, pages_root)
 {
+    this.img_ext=page_ext;
+    this.pages_root=pages_root;
     this.g_pages_list=new Array();
     this.active_page=null;
     this.ishover=false;

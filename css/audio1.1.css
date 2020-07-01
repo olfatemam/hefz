@@ -23,17 +23,18 @@ audio {
 .cell
 {
     width:auto;
-    background: #50555C;
+    background: trnsparent;
     position: relative;
     height: 25px;
     vertical-align: middle;
     display:inline-block;
-    margin:0;
-    margin-bottom: 0px !important;
+    margin:20px;
+    margin-bottom: 20px;
     position: relative;
     top: 50%;
     transform: perspective(1px) translateY(-50%);
 }
+
  
     
 .audio_cell
