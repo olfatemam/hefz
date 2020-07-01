@@ -49,13 +49,13 @@ require_once 'Controllers/MainPageController.php';
 
 <div class="w3-container">
 <div class="w3-row">
-    <div class="w3-col w3-card w3-border m12 l3 s12 w3-light-gray" style="height: 920px;">
+    <div class="w3-col w3-card w3-border m12 l3 s12 w3-light-gray" style="height: 890px;">
         <?php include('views/leftsection.php') ?>
     </div>
-    <div class="w3-col w3-card w3-border m12 l5 s12 w3-light-gray" style="height: 920px;">
+    <div class="w3-col w3-card w3-border m12 l5 s12 w3-light-gray" style="height: 890px;">
         <?php include('views/quran.php') ?>
     </div>
-    <div class="w3-col w3-card w3-border m12 l4 s12 w3-light-gray" style="height: 920px;">
+    <div class="w3-col w3-card w3-border m12 l4 s12 w3-light-gray" style="height: 890px;">
         <?php include('views/rightsection.php') ?>
     </div>
 </div>
