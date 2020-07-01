@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Models\Html\HtmlGenerator.php';
-require_once 'Models\Tafseer.php';
+require_once 'Models/Html/HtmlGenerator.php';
+require_once 'Models/Tafseer.php';
 
 
 class Tafseers extends HtmlGenerator
@@ -12,7 +12,7 @@ class Tafseers extends HtmlGenerator
     {
         $settings = include('config/app.php');        
         
-        $t_file=$settings['app_root'].'/data/Tafseers.xml';
+        $t_file=$settings['app_root'].'/data/tafseers.xml';
         
         $root_obj = simplexml_load_file($t_file);
         foreach($root_obj as $node )

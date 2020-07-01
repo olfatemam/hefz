@@ -7,7 +7,7 @@
  */
 
 
-require_once 'Models\Html\HtmlGenerator.php';
+require_once 'Models/Html/HtmlGenerator.php';
 
 class Reciter
 {

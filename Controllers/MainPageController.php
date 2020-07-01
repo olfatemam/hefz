@@ -5,22 +5,22 @@
  * https://www.upwork.com/freelancers/~011afaac378ad2d181
  */
 
-require_once 'Models\Soura.php';
-require_once 'Models\Reciter.php';
-require_once 'Models\Pages\Tafseers.php';
+require_once 'Models/Soura.php';
+require_once 'Models/Reciter.php';
+require_once 'Models/Pages/Tafseers.php';
 
-require_once 'Models\Html\AudioControl.php';
-require_once 'Models\Html\NavigationMenu.php';
+require_once 'Models/Html/AudioControl.php';
+require_once 'Models/Html/NavigationMenu.php';
 
-require_once 'Models\Html\Header.php';
-require_once 'Models\Html\QPage.php';
-require_once 'Models\Html\ControlBlock.php';
+require_once 'Models/Html/Header.php';
+require_once 'Models/Html/QPage.php';
+require_once 'Models/Html/ControlBlock.php';
 
 
-define("TOP_BANNER", 1, true);
-define("LEFT_BANNER", 2, true);
-define("RIGHT_BANNER", 3, true);
-define("TOP_LEFT_BANNER", 4, true);
+define("TOP_BANNER", 1, "");
+define("LEFT_BANNER", 2, "");
+define("RIGHT_BANNER", 3, "");
+define("TOP_LEFT_BANNER", 4, "");
 
 
 

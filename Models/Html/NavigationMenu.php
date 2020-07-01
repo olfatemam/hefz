@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Models\Soura.php';
-require_once 'Models\Juzz.php';
+require_once 'Models/Soura.php';
+require_once 'Models/Juzz.php';
 
 class NavigationMenu //extends HtmlGenerator
 {

@@ -44,6 +44,14 @@
 
 <body>
 <?php 
+
+//$path = get_include_path();
+//
+//$settings=include ('config/app.php');
+//
+//$path.=';'.$settings['app_folder'];
+//set_include_path($path);
+
 require_once 'Controllers/MainPageController.php';
 ?>
 
