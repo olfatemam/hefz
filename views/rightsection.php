@@ -1,3 +1,4 @@
+
 <div class="w3-bar w3-black w3-card w3-center" style="width: 100%;height:35px;">
     <button style="height: 35px;" class="tablink w3-red w3-col m4" onclick="openTab(event,'Recitation')">Recitation</button>
     <button style="height: 35px;" class="tablink w3-col m4" onclick="openTab(event,'GotoSoura')">Sura Index</button>
@@ -42,9 +43,9 @@
 </div>
 </div>
 </div>
-<div id="GotoSoura" class="w3-container w3-border mytab" style="display:none">
+<div id="GotoSoura" class="w3-container w3-border mytab" style="display:none;">
       <?php echo (new Suras())->generate_ul_list(); ?>
 </div>
-<div id="GotoJuzz" class="w3-container w3-border w3-card-4 w3-right w3-right-align w3-right mytab" style="direction: rtl;width:100%;display:none;margin-left: 0;margin-right: 0">
+<div id="GotoJuzz" class="w3-container w3-border mytab" style="display:none;">
         <?php echo (new Juzs())->generate_table(); ?>
 </div>

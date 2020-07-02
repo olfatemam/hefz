@@ -105,7 +105,7 @@ public function __construct() {
     
     public function generate_ul_list()
     {
-        $ul = '<ul class="w3-ul">';
+        $ul = '<ul class="w3-ul" style="width:100%;height: 850px;overflow-y: scroll; ">';
         
         foreach($this->Suras_info as $suraobj)
         {

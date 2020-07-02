@@ -16,6 +16,8 @@
 <style>
 .cell
 {
+    
+    
     width:auto;
     background: #87CEEB;
     position: relative;

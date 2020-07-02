@@ -25,15 +25,17 @@ class Juzz {
     
     public function generate_table_row($engine)
     {
+        
+        //$classes=['w3-col m1', 'w3-col m1', 'w3-col m1', 'w3-col m1', 'w3-col m8'];
         $row='<tr onclick="goto_sura('.$this->sura_num. ','. $this->aya. ')">';
         
         $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right w3-right-align w3-col m1')), $this->index);
 
         $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right w3-right-align w3-col m2')), $this->name);
-        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right w3-right-align w3-col m1')), $this->sura_num);
+        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right w3-right-align w3-col m2')), $this->sura_num);
         
         $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-right-align w3-right w3-col m1')), $this->aya);
-        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-large  w3-right w3-right-align w3-col m7')), $this->start);
+        $row.=  $engine->gen_control('td', array(new attribute('class', 'w3-large  w3-right w3-right-align w3-col m6')), $this->start);
         $row.="</tr>";
         
         
@@ -59,14 +61,21 @@ class Juzs extends HtmlGenerator
     {
         $this->init_juzzs_array_from_xml();
         $header=['جزء', 'سورة','رقم السورة','آية','بداية الجزء'];
-        //$menu ='<ul class="w3-ul  -align" style="width:100%">';
-        $table ='<table class="w3-table w3-table-all w3-right-align w3-right w3-border w3-hoverable" style="width:100%;">';
+        
+        $classes=['w3-col m1', 'w3-col m2', 'w3-col m2', 'w3-col m1', 'w3-col m6'];
+        
+//$menu ='<ul class="w3-ul  -align" style="width:100%">';
+        $table ='<style>.pane {display: inline-block;overflow-y: scroll;max-height:850px;width:100%;}</style>'
+                . '<div class="pane" >'
+                . '<table '
+                . ' class="w3-table w3-table-all w3-right-align w3-right w3-hoverable" '
+                . ' style="width:100%;"><tbody>';
         
         $row='<tr class="w3-right w3-right-align" style="width:100%">';
         
-        foreach($header as $celltext)
+        foreach($header as $key=>$celltext)
         {
-            $row .= '<th class="w3-right w3-right-align">'.$celltext.'</th>';
+            $row .= '<th class="w3-right w3-right-align '.$classes[$key].' ">'.$celltext.'</th>';
         }
         $row .='</tr>';
         
@@ -76,7 +85,7 @@ class Juzs extends HtmlGenerator
         {
             $table .=$juzz->generate_table_row($this);
         }
-        $table .='</table>';
+        $table .='</table></div></tbody>';
         return $table;
     }  
 }
