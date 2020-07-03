@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style_1.03.css" />
+<link rel="stylesheet" type="text/css" href="css/style_1.04.css" />
 
 <link rel="stylesheet" type="text/css" href="css/w3.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,43 +11,12 @@
 <link rel="stylesheet" type="text/css" href="css/controlpanel1.2.css" />
 <link rel="stylesheet" type="text/css" href="css/audio1.1.css" />
 
-
-<style>
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-  #left_section,#right_section,#q_section{
-      width:100%;
-      margin:0;
-      padding: 0;
-      display: table-cell;
-  }
-}
-
-.cell
-{
-    width:auto;
-    background: #87CEEB;
-    position: relative;
-    height: 25px;
-    vertical-align: middle;
-    display:inline-block;
-    margin:20px;
-    margin-bottom: 20px;
-    position: relative;
-    top: 50%;
-    transform: perspective(1px) translateY(-50%);
-}
-
-</style>    
         
 <script src="js/ihfaz7.js"></script>
 <script src="js/verserect12.js"></script>
 <script src="js/verse8.js"></script>
 <script src="js/pages1.05.js"></script>
 <script src="js/media8.js"></script>
-
 
 <title>Al Murattal</title>
 
@@ -57,6 +26,8 @@
 <?php 
 require_once 'Controllers/MainPageController.php';
 ?>
+
+<div class="w3-container">
 <div class="w3-row">
 <div id="left_section" class="w3-card w3-light-grey w3-col l3 m12 s12" style="height: 890px !important;margin:0;padding:0">
     <?php include('views/leftsection.php') ?>
@@ -66,6 +37,7 @@ require_once 'Controllers/MainPageController.php';
 </div>
 <div id="right_section" class="w3-card w3-light-gray w3-col l4 m12 s12" style="height: 890px !important;margin:0;padding:0">
     <?php include('views/rightsection.php') ?>
+</div>
 </div>
 </div>
 </body>
