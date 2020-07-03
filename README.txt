@@ -14,16 +14,18 @@ settings page is currently only allow the creating of the indexes xml files for 
 - the audio provided in the source is limited to the first chapter and the first ten verses of the second chapter 
 for one reciter to test the functionality, the complete audio files can be aquired from http://www.everyayah.com/
 
-
+Done:
+config/app : returns array of system cofig variables.
+w3css styles
 TODO:
 
 
-- implement configuration class
+- 
 - implement proper registration to viewers count 
-- use w3css styles
+- 
 -review code
-- change the design for the ihfaz.php: any help in this area is appreciated.
-- chNGE VOLUME CONTROL to be vertical so the play, stop can be larger in size
+- change the design for the index.php: any help in this area is appreciated.
+- need more ideas on features to add
 
 description of the classes:
 
