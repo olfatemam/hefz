@@ -15,11 +15,17 @@
 <tr>
 <td><label for="input_page_number">Goto:</label></td>
 <td>
-<div class='w3-col l10 s810 m10'><input class="w3-input" id="input_page_number"  style="width:100%" type="number" min="1" max="604" >
-</div>
-<div class='w3-col l2 s2 m2'><button class="w3-button w3-blue" style="height:34px" id="goto_page_btn" onclick="goto_page()">Go</button></div>
-</td></tr>
+<input class="w3-input" id="input_page_number"  style="width:100%" type="number" min="1" max="604" >
+</td><td>
+<button class="btn w3-button w3-blue" style="width:100%;" id="goto_page_btn" onclick="goto_page()">Go</button></div>
+</td>
+</tr>
+</tbody>
+</table>
 
+<table class="w3-table w3-table-all w3-card">
+<tbody>
+<tr>
 <tr><td><label for="reciter">Reciter:</label></td><td> <?php echo (new reciters())->create_list();?></td></tr>
 <tr><td><label for="soura">Surah:</label></td><td> <?php echo (new Suras())->create_list();?></td></tr>
 <tr><td><label for="from">From:</label></td><td> <select class="w3-select w3-border" id="from_list" onchange="on_from_changed()"></select></td></tr>

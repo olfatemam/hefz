@@ -3,50 +3,40 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" type="text/css" href="css/style_1.09.css" />
-
-<link rel="stylesheet" type="text/css" href="css/audio1.1.css" />
+<link rel="stylesheet" type="text/css" href="css/style_1.04.css" />
 
 <link rel="stylesheet" type="text/css" href="css/w3.css" />
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<link rel="stylesheet" type="text/css" href="css/controlpanel1.2.css" />
+<link rel="stylesheet" type="text/css" href="css/audio1.1.css" />
 
+        
 <script src="js/ihfaz7.js"></script>
 <script src="js/verserect12.js"></script>
 <script src="js/verse8.js"></script>
 <script src="js/pages1.05.js"></script>
 <script src="js/media8.js"></script>
 
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
 <title>Al Murattal</title>
 
-</head >
+</head>
 
-<body class="">
+<body>
 <?php 
 require_once 'Controllers/MainPageController.php';
 ?>
 
-<div class="container" style="max-width:1500px !important;margin:0;padding:0">
-  <div class="row" style="width:100%;margin:0;padding:0">
-      
-<div id="left_section1" class="w3-card w3-light-grey col-lg-3 col-md-3  col-xs-12 " style="height: 890px !important;margin:0;padding:0">
-    <?php include('views/rightsection.php') ?>
+<div class="w3-container">
+<div class="w3-row">
+<div id="left_section" class="w3-card w3-light-grey w3-col l3 m12 s12" style="height: 890px !important;margin:0;padding:0">
+    <?php include('views/leftsection.php') ?>
 </div>
-<div id="q_section"  class="w3-card  w3-light-gray col-lg-6 col-md-6  col-xs-12" style="height: 890px !important;margin:0;padding:0">
+<div id="q_section"  class="w3-card  w3-light-gray w3-col l5 m12 s12" style="height: 890px !important;margin:0;padding:0">
     <?php include('views/quran.php') ?>
 </div>
-<div id="right_section" class="w3-card w3-light-gray col-lg-3 col-md-3  col-xs-12" style="height: 890px !important;margin:0;padding:0">
-    <?php include('views/leftsection.php') ?>
+<div id="right_section" class="w3-card w3-light-gray w3-col l4 m12 s12" style="height: 890px !important;margin:0;padding:0">
+    <?php include('views/rightsection.php') ?>
 </div>
 </div>
 </div>
@@ -83,6 +73,8 @@ audio_initialized = false;
 }
 
     
+    
+    
 </script>
 
 
@@ -92,6 +84,34 @@ function getCssProperty(elmId, property){
    var elem = document.getElementById(elmId);
    return window.getComputedStyle(elem,null).getPropertyValue(property);
 }
+function getWidth() {
+  return Math.max(
+    document.body.scrollWidth,
+    document.documentElement.scrollWidth,
+    document.body.offsetWidth,
+    document.documentElement.offsetWidth,
+    document.documentElement.clientWidth
+  );
+}
+
+function getHeight() {
+  return Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.documentElement.clientHeight
+  );
+}
+function expand_sections()
+    {
+    let ids = ['left_section','right_section','q_section'];
+    ids.forEach(function(item, index) 
+    {
+        (document.getElementById(item)).style.width="100%";
+    });
+        
+    }   
     
 function load_objects()
 {
@@ -100,11 +120,29 @@ function load_objects()
     g_Pages.get_pages_from_server(g_QIhfazPage.get_request_params());
     init_playAudio();
 
+    //w = getWidth();
+    
+    if(w<=650)
+    {
+        expand_sections();
+    }
+//    var os = getOS();
+//    if(os == 'Android' )
+//    {
+//        w = getWidth();
+//        expand_sections();
+//    }
+//    else if(os == 'iOS')
+//    {
+//        w = getWidth();
+//        expand_sections();
+//    }
 }
 
 (function() {
     
     load_objects();
+    
 })();    
 </script>    
 

@@ -23,7 +23,7 @@ audio {
 .cell
 {
     width:auto;
-    background: trnsparent;
+    background: #87CEEB;
     position: relative;
     height: 25px;
     vertical-align: middle;
@@ -34,7 +34,6 @@ audio {
     top: 50%;
     transform: perspective(1px) translateY(-50%);
 }
-
  
     
 .audio_cell

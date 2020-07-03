@@ -1,0 +1,41 @@
+.play_verse
+{
+    color:#50555C;
+}
+
+.hover_verse
+{
+    color:  gold;
+}
+
+.clicked_verse
+{
+    color:  darkorange;
+}
+
+
+#dbclick_info{
+    z-index: 1;
+    position: absolute;
+    margin-top: 0px;
+    top:885px;
+    float:left;
+    left: 130px;
+    border: thin solid #D1D3D4;
+}
+
+canvas {
+    position: relative;
+    float:left;
+    vertical-align: top;
+    margin:0;
+    padding:0;
+}
+
+
+
+input[type=checkbox],input[type=radio] {
+	margin:6px ;
+	height:13px;
+	vertical-align:middle;
+}
