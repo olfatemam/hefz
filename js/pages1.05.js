@@ -246,13 +246,22 @@ QPage.prototype.show_q_page0=function(img,force)
 QPage.prototype.show_q_page=function(img,force)
 {
         //this sould be syncronized
-        var canvas = document.getElementById('pages_canvas');
+        let canvas = document.getElementById('pages_canvas');
+        let parent_q_div = document.getElementById('parent_q_div');
+//        let style = getComputedStyle(parent_q_div);
+
+        var left = 135-this.left;
         
-        //var margin_column=document.getElementById('margin_column');
-        canvas.style.width;
-        var w = 135-this.left;
+//        let cw_width = parseInt(style.width);
+//        
+//        //var cw = main_q_container.style.width;
+//        if(cw_width<=650)
+//        {
+//            //left=0;
+//            //canvas.style.width = cw_width + "px";
+//        }
         
-        canvas.style.left = w + "px";
+        canvas.style.left = left + "px";
         
         var ctx = canvas.getContext("2d");
         clear_canvas(canvas, ctx);

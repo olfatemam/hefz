@@ -13,18 +13,6 @@
 
 
 <style>
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-  #left_section,#right_section,#q_section{
-      width:100%;
-      margin:0;
-      padding: 0;
-      display: table-cell;
-  }
-}
-
 .cell
 {
     width:auto;
@@ -57,17 +45,40 @@
 <?php 
 require_once 'Controllers/MainPageController.php';
 ?>
-<div class="w3-row">
-<div id="left_section" class="w3-card w3-light-grey w3-col l3 m12 s12" style="height: 890px !important;margin:0;padding:0">
-    <?php include('views/leftsection.php') ?>
+    
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main right'
+    'menu main main main main right';
+  grid-gap: 0px;
+  background-color: transparent;
+  padding: 0px;
+}
+
+.grid-container > div {
+  background-color: transparent;
+  text-align: center;
+  padding: 0 0;
+  font-size: 20px;
+}
+</style>
+
+<div class="grid-container">
+  <div class="w3-card w3-light-grey  item1"></div>
+  <div class="w3-card w3-light-grey item2"><?php include('views/leftsection.php') ?></div>
+  <div class="w3-card w3-light-grey item3"><?php include('views/quran.php') ?></div>  
+  <div class="w3-card w3-light-grey item4"><?php include('views/rightsection.php') ?></div>
 </div>
-<div id="q_section"  class="w3-card  w3-light-gray w3-col l5 m12 s12" style="height: 890px !important;margin:0;padding:0">
-    <?php include('views/quran.php') ?>
-</div>
-<div id="right_section" class="w3-card w3-light-gray w3-col l4 m12 s12" style="height: 890px !important;margin:0;padding:0">
-    <?php include('views/rightsection.php') ?>
-</div>
-</div>
+
 </body>
 
 <script>
@@ -148,7 +159,7 @@ function load_objects()
     g_Pages.get_pages_from_server(g_QIhfazPage.get_request_params());
     init_playAudio();
 
-    //w = getWidth();
+    w = getWidth();
     
     if(w<=650)
     {
