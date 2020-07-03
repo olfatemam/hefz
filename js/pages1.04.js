@@ -224,7 +224,7 @@ QPage.prototype.clear_all=function()
     this.update_translation_box('','Translation');
 } 
 
-QPage.prototype.show_q_page=function(img,force)
+QPage.prototype.show_q_page0=function(img,force)
 {
         //this sould be syncronized
         var canvas = document.getElementById('pages_canvas');
@@ -234,6 +234,25 @@ QPage.prototype.show_q_page=function(img,force)
         var w = 135-this.left;
         
         margin_column.style.width = w + "px";
+        
+        var ctx = canvas.getContext("2d");
+        clear_canvas(canvas, ctx);
+        this.clear_all();
+        ctx.drawImage(img, 0, 0);
+        this.calc_verses_areas(ctx);
+        this.highlight_verse(ctx);
+};
+
+QPage.prototype.show_q_page=function(img,force)
+{
+        //this sould be syncronized
+        var canvas = document.getElementById('pages_canvas');
+        
+        //var margin_column=document.getElementById('margin_column');
+        canvas.style.width;
+        var w = 135-this.left;
+        
+        canvas.style.left = w + "px";
         
         var ctx = canvas.getContext("2d");
         clear_canvas(canvas, ctx);

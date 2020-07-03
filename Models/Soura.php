@@ -69,7 +69,7 @@ class Soura
                 new attribute('style', 'padding-left:0;padding-right:0;width:100%'),
                 new attribute('onclick', 'goto_sura('.$this->index.', 1)')), $span1.$span2);
     
-        return "<li class='w3-col m6 l2 s12 w3-border w3-center w3-right' style='padding-left:0;padding-right:0'>".$a."</li>";
+        return "<li class='w3-col m4 l3 s4 w3-border w3-center w3-right' style='padding-left:0;padding-right:0'>".$a."</li>";
     }
 }
 

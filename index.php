@@ -2,7 +2,6 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width,user-scalable=yes" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/style_1.03.css" />
 
@@ -16,8 +15,6 @@
 <style>
 .cell
 {
-    
-    
     width:auto;
     background: #87CEEB;
     position: relative;
@@ -36,7 +33,7 @@
 <script src="js/ihfaz7.js"></script>
 <script src="js/verserect12.js"></script>
 <script src="js/verse8.js"></script>
-<script src="js/pages1.03.js"></script>
+<script src="js/pages1.04.js"></script>
 <script src="js/media8.js"></script>
 
 
@@ -46,31 +43,21 @@
 
 <body>
 <?php 
-
-//$path = get_include_path();
-//
-//$settings=include ('config/app.php');
-//
-//$path.=';'.$settings['app_folder'];
-//set_include_path($path);
-
 require_once 'Controllers/MainPageController.php';
 ?>
-
-<div class="w3-container">
+    <div class="w3-container">
 <div class="w3-row">
-    <div class="w3-col w3-card w3-border m12 l3 s12 w3-light-gray" style="height: 890px;">
+  <div class="w3-card w3-light-grey w3-col l3 w3-mobile" style="height: 890px !important;margin:0;padding:0">
         <?php include('views/leftsection.php') ?>
-    </div>
-    <div class="w3-col w3-card w3-border m12 l5 s12 w3-light-gray" style="height: 890px;">
+  </div>
+  <div class="w3-card  w3-light-gray w3-col l5 w3-mobile" style="height: 890px !important;margin:0;padding:0">
         <?php include('views/quran.php') ?>
-    </div>
-    <div class="w3-col w3-card w3-border m12 l4 s12 w3-light-gray" style="height: 890px;">
+  </div>
+<div class="w3-card w3-light-gray w3-col l4 w3-mobile" style="height: 890px !important;margin:0;padding:0">
         <?php include('views/rightsection.php') ?>
-    </div>
+  </div>
 </div>
 </div>
-
 </body>
 
 <script>
@@ -81,11 +68,8 @@ echo 'var page_ext="'.$settings['img_ext'].'";';
 ?>
     
 g_Pages = new QPages(page_ext, pages_root);
-
 g_QMedia = new QMedia();
-
 g_QIhfazPage = new QIhfazPage();
-
 audio_initialized = false;
 </script>
 
