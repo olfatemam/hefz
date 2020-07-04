@@ -1,5 +1,5 @@
 
-<div class='row w3-center'>
+<div class='w3-center'>
 
 <div class="w3-centered w3-transparent" id="nav_row" style="height:35px;width:100%;">
     <a id="next_link" onclick="next()" class="w3-margin-left w3-margin-right"><i class="fa fa-arrow-circle-left" style="font-size:24px"></i></a>
@@ -7,7 +7,7 @@
     <a id="prev_link" onclick="prev()" class="w3-margin-left w3-margin-right"><i class="fa fa-arrow-circle-right" style="font-size:24px"></i></a>
 </div>
 
-<div class="canvas_div1 w3-centered" style="padding:0;margin:0;">
+<div class="w3-centered" style="width:100%;padding:0;margin:0;">
 <canvas class="" id="pages_canvas" width="650" height="842" style="float:top; padding:0;margin:0;"
         onclick="click_verse(event)" ondblclick="dblclick_verse(event)" 
         onmouseover="hover_verse(event)" onmouseout="clear_verse(event)">
