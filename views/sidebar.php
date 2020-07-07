@@ -1,7 +1,8 @@
 <div class="w3-bar w3-black w3-card w3-center" style="width: 100%;height:35px;">
-    <button style="height: 35px;" class="tablink w3-red w3-col l4 m4 s4" onclick="openTab(event,'Recitation')">Recitation</button>
-    <button style="height: 35px;" class="tablink w3-col l4 m4 s4" onclick="openTab(event,'GotoSoura')">Sura Index</button>
-    <button style="height: 35px;" class="tablink w3-col l4 m4 s4" onclick="openTab(event,'GotoJuzz')">Juzz Index</button>
+    <button style="height: 35px;" class="tablink w3-red w3-col l3 m3 s3" onclick="openTab(event,'Recitation')">Recitation</button>
+    <button style="height: 35px;" class="tablink w3-col l3 m3 s3" onclick="openTab(event,'GotoSoura')">Sura</button>
+    <button style="height: 35px;" class="tablink w3-col l3 m3 s3" onclick="openTab(event,'GotoJuzz')">Juzz</button>
+    <button style="height: 35px;" class="tablink w3-col l3 m3 s3" onclick="openTab(event,'Translation')">Translation</button>
 </div>
 
 <div id="Recitation" class="w3-container mytab" >
@@ -54,4 +55,25 @@
 </div>
 <div id="GotoJuzz" class="w3-container mytab" style="display:none;">
         <?php echo (new Juzs())->generate_table(); ?>
+</div>
+<div id="Translation" class="w3-container mytab" style="display:none;">
+<div class="w3-card w3-center" id="nav_row0" style="height:35px;">Translation</div>
+
+
+
+<div class="w3-white" style="width:100%;height:855px">
+
+<table class="w3-table w3-table-all">
+<tbody>
+<tr ><td><label for="translation">Source:</label></td><td > <?php echo (new Tafseers())->create_list();?></td></tr>
+</tbody>
+</table>
+
+<div class="w3-panel" style="width:100%">
+    <span id="tafseer_title" class="tafseer_title" style="visibility: hidden"></span>
+</div>
+<div class="w3-panel" style="width:100%">    
+    <span id="tafseer_text" class="tafseer_text"></span>
+</div>
+</div>
 </div>
