@@ -239,6 +239,7 @@ QPage.prototype.show_q_page0=function(img,force)
         clear_canvas(canvas, ctx);
         this.clear_all();
         ctx.drawImage(img, 0, 0);
+          
         this.calc_verses_areas(ctx);
         this.highlight_verse(ctx);
 };
@@ -266,6 +267,7 @@ QPage.prototype.show_q_page=function(img,force)
         var ctx = canvas.getContext("2d");
         clear_canvas(canvas, ctx);
         this.clear_all();
+        
         ctx.drawImage(img, 0, 0);
         this.calc_verses_areas(ctx);
         this.highlight_verse(ctx);
